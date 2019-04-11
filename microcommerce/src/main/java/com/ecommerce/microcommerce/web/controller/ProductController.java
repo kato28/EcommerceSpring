@@ -47,6 +47,11 @@ public class ProductController {
     public List<Product> testeDeRequetes(@PathVariable int prixLimit) {
         return productDao.findByPrixGreaterThan(400);
     }
+
+    @GetMapping(value = "test/produits/{recherche}")
+    public List<Product> testeDeRequetes(@PathVariable String recherche) {
+        return productDao.findByNomLike("%"+recherche+"%");
+    }
     
     /*
     //ajouter un produit
