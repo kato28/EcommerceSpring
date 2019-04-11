@@ -76,5 +76,10 @@ public class ProductController {
 
         return ResponseEntity.created(location).build();
     }
+    
+    @PutMapping (value = "/Produits")
+    public void updateProduit(@RequestBody Product product) {
 
+        productDao.save(product);
+    }
 }
