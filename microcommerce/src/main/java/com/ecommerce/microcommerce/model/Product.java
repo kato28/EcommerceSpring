@@ -11,7 +11,6 @@ public class Product {
     public Product() {
     }
 
-    //constructeur pour nos tests
 
     public Product(int id, String nom, int prix) {
         this.id=id;
