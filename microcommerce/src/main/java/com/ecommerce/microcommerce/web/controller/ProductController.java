@@ -43,6 +43,22 @@ public class ProductController {
         return productDao.findById(id);
     }
 
+    @GetMapping(value = "test/produits/{prixLimit}")
+    public List<Product> testeDeRequetes(@PathVariable int prixLimit) {
+        return productDao.findByPrixGreaterThan(400);
+    }
+
+    @GetMapping(value = "test/produits/{recherche}")
+    public List<Product> testeDeRequetes(@PathVariable String recherche) {
+        return productDao.findByNomLike("%"+recherche+"%");
+    }
+
+    @DeleteMapping (value = "/Produits/{id}")
+    public void supprimerProduit(@PathVariable int id) {
+
+        productDao.delete(id);
+    }
+
     //ajouter un produit
     @PostMapping(value = "/Produits")
     public ResponseEntity<Void> ajouterProduit(@RequestBody Product product) {
@@ -60,5 +76,10 @@ public class ProductController {
 
         return ResponseEntity.created(location).build();
     }
+    
+    @PutMapping (value = "/Produits")
+    public void updateProduit(@RequestBody Product product) {
 
+        productDao.save(product);
+    }
 }
