@@ -1,20 +1,33 @@
-plugins {
-	id 'org.springframework.boot' version '2.1.4.RELEASE'
-	id 'java'
+
+buildscript {
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.3.RELEASE")
+	}
 }
 
+apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
-
+apply plugin: 'idea'
+apply plugin: 'java'
 group = 'com.ecommerce'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
-
+bootJar {
+	baseName = 'gs-spring-boot'
+	version =  '0.1.0'
+}
 repositories {
 	mavenCentral()
 }
 
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter'
-	implementation 'org.springframework.boot:spring-boot-starter-web:RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
