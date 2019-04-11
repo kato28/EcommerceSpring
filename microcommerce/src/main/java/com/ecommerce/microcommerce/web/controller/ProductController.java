@@ -35,13 +35,19 @@ public class ProductController {
 
         return produitsFiltres;
     }
-    
+
     //Récupérer un produit par son Id
     @GetMapping(value="/Produits/{id}")
     public Product afficherUnProduit(@PathVariable int id) {
 
         return productDao.findById(id);
     }
+
+    @GetMapping(value = "test/produits/{prixLimit}")
+    public List<Product> testeDeRequetes(@PathVariable int prixLimit) {
+        return productDao.findByPrixGreaterThan(400);
+    }
+    
     /*
     //ajouter un produit
     @PostMapping(value = "/Produits")

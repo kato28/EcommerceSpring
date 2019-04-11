@@ -13,5 +13,6 @@ public interface ProductDao  extends JpaRepository<Product, Integer> {
     public Product save(Product product);
     */
     Product findById(int id);
+    List<Product> findByPrixGreaterThan(int prixLimit);
 }
 
