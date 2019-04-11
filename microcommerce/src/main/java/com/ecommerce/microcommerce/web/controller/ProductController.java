@@ -35,7 +35,7 @@ public class ProductController {
 
         return produitsFiltres;
     }
-
+    /*
     //Récupérer un produit par son Id
     @GetMapping(value="/Produits/{id}")
     public Product afficherUnProduit(@PathVariable int id) {
@@ -60,5 +60,5 @@ public class ProductController {
 
         return ResponseEntity.created(location).build();
     }
-
+    */
 }
