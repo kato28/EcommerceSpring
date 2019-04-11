@@ -58,7 +58,7 @@ public class ProductController {
 
         productDao.delete(id);
     }
-    /*
+
     //ajouter un produit
     @PostMapping(value = "/Produits")
     public ResponseEntity<Void> ajouterProduit(@RequestBody Product product) {
@@ -76,5 +76,5 @@ public class ProductController {
 
         return ResponseEntity.created(location).build();
     }
-    */
+
 }
