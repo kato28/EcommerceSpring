@@ -1,10 +1,12 @@
 package com.ecommerce.microcommerce.dao;
 
 import com.ecommerce.microcommerce.model.Product;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class ProductDaoImpl implements ProductDao {
 
     public static List<Product>products=new ArrayList<>();
