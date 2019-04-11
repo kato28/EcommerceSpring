@@ -1,5 +1,9 @@
 package com.ecommerce.microcommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonFilter;
+
+
+@JsonFilter("monFiltreDynamique")
 public class Product {
 
     private int id;
