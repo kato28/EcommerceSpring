@@ -12,5 +12,6 @@ public interface ProductDao  extends JpaRepository<Product, Integer> {
     public Product findById(int id);
     public Product save(Product product);
     */
+    Product findById(int id);
 }
 

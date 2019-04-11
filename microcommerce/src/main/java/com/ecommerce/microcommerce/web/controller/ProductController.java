@@ -35,14 +35,14 @@ public class ProductController {
 
         return produitsFiltres;
     }
-    /*
+    
     //Récupérer un produit par son Id
     @GetMapping(value="/Produits/{id}")
     public Product afficherUnProduit(@PathVariable int id) {
 
         return productDao.findById(id);
     }
-
+    /*
     //ajouter un produit
     @PostMapping(value = "/Produits")
     public ResponseEntity<Void> ajouterProduit(@RequestBody Product product) {
