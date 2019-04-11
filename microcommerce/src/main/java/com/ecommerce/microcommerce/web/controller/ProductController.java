@@ -25,7 +25,7 @@ public class ProductController {
     public MappingJacksonValue listeProduits() {
         List<Product> produits = productDao.findAll();
 
-        SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("id");
+        SimpleBeanPropertyFilter monFiltre = SimpleBeanPropertyFilter.serializeAllExcept("prix");
 
         FilterProvider listDeNosFiltres = new SimpleFilterProvider().addFilter("monFiltreDynamique", monFiltre);
 
