@@ -52,7 +52,12 @@ public class ProductController {
     public List<Product> testeDeRequetes(@PathVariable String recherche) {
         return productDao.findByNomLike("%"+recherche+"%");
     }
-    
+
+    @DeleteMapping (value = "/Produits/{id}")
+    public void supprimerProduit(@PathVariable int id) {
+
+        productDao.delete(id);
+    }
     /*
     //ajouter un produit
     @PostMapping(value = "/Produits")
